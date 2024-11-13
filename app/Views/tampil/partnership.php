@@ -1,6 +1,7 @@
 <?= $this->extend('layout/app'); ?>
 
 <?= $this->section('head'); ?>
+
 <!-- Pastikan ini berada di dalam tag <head> -->
 <meta name="description" content="Lihat berbagai kemitraan yang telah dilakukan oleh Diggers dengan banyak perusahaan terkemuka. Temukan informasi tentang perusahaan yang berkolaborasi, kolaborasi yang dilakukan, dan durasi kemitraannya. Dapatkan wawasan mendalam tentang mitra-mitra penting yang telah bekerja sama dengan Diggers.">
 <?= $this->endSection(); ?>

@@ -7,7 +7,7 @@
     <title>About | Learn more about what Diggers are.</title>
 <?=$this->endSection(); ?>
 
-<?=$this->section('content'); ?>
+<?=$this->section('content'); ?> 
 
 <!-- banner---> 
 <section class="hero-section text-center" style="background-color: #F7C433; padding: 40px 20px; border-radius: 30px;">

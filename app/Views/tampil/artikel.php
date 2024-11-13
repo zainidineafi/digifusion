@@ -11,8 +11,8 @@
 <!-- Banner -->
 <section class="hero-section text-center" style="background-color: #F7C433; padding: 40px 20px; border-radius: 30px;">
     <div class="container">
-        <h1 style="font-size: 3rem; color: #FFFFFF; text-decoration: underline;">Article</h1>
-        <p style="color: #FFFFFF; margin-bottom: 40px; font-size: 1.2rem;">Read some of the existing articles about Diggers</p>
+        <h1 style="font-size: 3rem; color: #FFFFFF; text-decoration: underline;">Blogs</h1>
+        <p style="color: #FFFFFF; margin-bottom: 40px; font-size: 1.2rem;">Read some of the existing Blogs about Diggers</p>
     </div>
 </section>
 
