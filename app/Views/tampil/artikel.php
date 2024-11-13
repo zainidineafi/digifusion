@@ -67,17 +67,18 @@
 </section>
 
 <!-- Card Articles -->
+<!-- Card Articles -->
 <section>
     <div class="container" style="padding: 0 15px;">
-        <div class="row row-cols-1 row-cols-md-3 g-4" id="article-list" style="margin: 0 auto;">
+        <div class="row g-4" id="article-list" style="display: flex; flex-direction: column;">
             <?php if (!empty($articles)): ?>
                 <?php foreach ($articles as $article): ?>
-                    <div class="col article-item" data-title="<?= strtolower($article['judul_artikel']); ?>" data-date="<?= strtotime($article['created_at']); ?>">
-                        <div class="card h-100 card-shadow" style="margin: 0 10px;">
+                    <div class="col-12 article-item" data-title="<?= strtolower($article['judul_artikel']); ?>" data-date="<?= strtotime($article['created_at']); ?>">
+                        <div class="card h-100 d-flex flex-row card-shadow" style="margin: 10px 0; align-items: center;">
                             <div class="card-img-wrapper">
                                 <img src="<?= base_url('image/' . $article['foto_artikel']); ?>" class="card-img-top article-img" alt="<?= $article['judul_artikel']; ?>">
                             </div>
-                            <div class="card-body">
+                            <div class="card-body" style="flex: 1; padding: 20px;">
                                 <h5 class="card-title"><?= $article['judul_artikel']; ?></h5>
                                 <p class="card-text deskripsi-artikel"><?= $article['deskripsi_artikel']; ?></p>
                                 <p class="card-text" style="font-size: 0.9rem; color: #999;">Created at: <?= date('d M Y', strtotime($article['created_at'])); ?></p>
@@ -93,33 +94,62 @@
     </div>
 </section>
 
-<script>
-    function sortArticles() {
-        const articleItems = document.querySelectorAll('.article-item');
-        const sortBy = document.getElementById('sort-select').value;
-        const articleArray = Array.from(articleItems);
+<style>
+    .card-shadow {
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        transition: transform 0.3s, box-shadow 0.3s;
+    }
 
-        if (sortBy === 'alphabetical') {
-            articleArray.sort((a, b) => {
-                const titleA = a.getAttribute('data-title');
-                const titleB = b.getAttribute('data-title');
-                return titleA.localeCompare(titleB);
-            });
-        } else if (sortBy === 'date_newest') {
-            articleArray.sort((a, b) => {
-                return b.getAttribute('data-date') - a.getAttribute('data-date');
-            });
-        } else if (sortBy === 'date_oldest') {
-            articleArray.sort((a, b) => {
-                return a.getAttribute('data-date') - b.getAttribute('data-date');
-            });
+    .card-shadow:hover {
+        transform: translateY(-5px) scale(1.03);
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+    }
+
+    .card {
+        display: flex;
+        flex-direction: row;
+    }
+
+    .card-img-wrapper {
+        flex-shrink: 0;
+        width: 200px;
+        background-color: #f9f9f9;
+        overflow: hidden;
+        border-radius: 10px 0 0 10px;
+    }
+
+    .article-img {
+        object-fit: cover;
+        width: 100%;
+        height: 100%;
+    }
+
+    .deskripsi-artikel {
+        display: -webkit-box;
+        -webkit-line-clamp: 3;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+
+    /* Responsiveness */
+    @media (max-width: 768px) {
+        .card {
+            flex-direction: column;
         }
 
-        const articleList = document.getElementById('article-list');
-        articleList.innerHTML = '';
-        articleArray.forEach(article => articleList.appendChild(article));
+        .card-img-wrapper {
+            width: 100%;
+            height: 200px;
+            border-radius: 10px 10px 0 0;
+        }
+
+        .card-body {
+            padding: 15px;
+        }
     }
-</script>
+</style>
+
 
 <!-- CSS untuk gaya baru Sort By -->
 <style>
