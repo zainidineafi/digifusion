@@ -4,29 +4,26 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet">
-    <meta name="description" content="Hubungi kami di untuk informasi lebih lanjut mengenai layanan kami. Kami siap membantu Anda dengan pertanyaan dan kebutuhan Anda.">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css"/>
-    <title>Diggifusion</title>
-    
-    <!-- Tambahkan link favicon dengan logo.png -->
     <link rel="icon" href="<?= base_url('image/logo.png'); ?>" type="image/png">
-    
-    <!-- Section untuk meta tag atau head khusus per halaman -->
+    <title>Diggifusion</title>
+
     <?= $this->renderSection('head'); ?>
 
     <style>
-        /* CSS tetap sama di sini */
         .hero-section {
             position: relative;
             width: 100%;
             height: 700px;
             overflow: hidden;
         }
+
         .hero-section img {
             width: 100%;
             height: 100%;
             object-fit: cover;
         }
+
         .hero-text {
             position: absolute;
             top: 50%;
@@ -39,16 +36,19 @@
             background-color: rgba(0, 0, 0, 0.5);
             border-radius: 10px;
         }
+
         .btn-custom {
             background-color: #F69E00;
             border-color: #F69E00;
             font-weight: 600;
             color: white;
         }
+
         .btn-custom:hover {
             background-color: #FFA500;
             border-color: #FFA500;
         }
+
         .card-custom {
             border-radius: 15px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
@@ -56,65 +56,85 @@
             margin: 20px auto;
             max-width: 600px;
         }
+
         .profile-img {
             width: 60px;
             height: 60px;
             border-radius: 50%;
             object-fit: cover;
         }
+
         .profile-info {
             margin-left: 15px;
         }
+
         .profile-info h5 {
             margin: 0;
             font-weight: bold;
         }
+
         .profile-info p {
             margin: 0;
             color: gray;
         }
+
         .card {
             display: flex;
             flex-direction: column;
             height: 100%;
             margin: 10px;
         }
+
         .card-body {
             flex: 1;
         }
+
         .card-img-top {
             object-fit: cover;
         }
+
         .navbar {
             background-color: #ffffff !important;
             position: sticky;
             top: 0;
             z-index: 1050;
         }
+
         .navbar-nav .nav-link {
             font-weight: 600;
             color: black;
         }
+
         .navbar-nav .nav-link.active {
             background-color: #F6C33C;
             color: black;
             border-radius: 20px;
             padding: 10px 15px;
         }
+
         .navbar-nav .nav-item {
             margin-right: 15px;
         }
+
         .form-control {
             border-radius: 20px;
         }
+
         .btn-outline-success {
             border-radius: 20px;
         }
+
         footer {
             padding: 30px 0;
         }
+
         .footer-links {
             padding: 10px 0;
+        }
+
+        .container-fluid {
+            position: relative;
+            z-index: 1;
         }
     </style>
 </head>
@@ -133,7 +153,7 @@
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
-    <div class="collapse navbar-collapse justify-content-center" id="navbarSupportedContent">
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
         <li class="nav-item">
           <a class="nav-link" href="/index" id="home-link">Home</a>
@@ -159,10 +179,8 @@
 </nav>
 
 <script>
-    // Mendapatkan URL saat ini
     const currentLocation = window.location.pathname;
 
-    // Mapping ID link dengan URL path
     const navLinks = {
         "/index": "home-link",
         "/about": "about-link",
@@ -172,7 +190,6 @@
         "/contact": "contact-link"
     };
 
-    // Menambahkan kelas active pada link yang sesuai atau "Home" sebagai default
     if (navLinks[currentLocation]) {
         document.getElementById(navLinks[currentLocation]).classList.add("active");
     } else if (currentLocation.startsWith("/product/detail") || currentLocation === "/product") {
@@ -180,7 +197,6 @@
     } else if (currentLocation.startsWith("/artikel/detail") || currentLocation === "/artikel") {
         document.getElementById("artikel-link").classList.add("active");
     } else {
-        // Set "Home" sebagai default jika tidak ada yang cocok
         document.getElementById("home-link").classList.add("active");
     }
 </script>
@@ -219,3 +235,8 @@
     </div>
   </footer>
 </div>
+
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.min.js"></script>
+</body>
+</html>

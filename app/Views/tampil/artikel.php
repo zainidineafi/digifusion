@@ -23,7 +23,7 @@
         justify-content: center;
         text-align: center;
         height: 50vh;
-        padding: 40px 20px; /* Padding di dalam section */
+        padding: 40px 20px;
     }
 
     .hero-section h1 {
@@ -35,21 +35,21 @@
     .hero-section p {
         margin-bottom: 40px;
         color: #FFFFFF;
-        font-size: 1.2rem; /* Ukuran teks lebih besar untuk lebih terlihat */
+        font-size: 1.2rem;
     }
 
     @media (max-width: 768px) {
         .hero-section h1 {
-            font-size: 2.5rem; /* Ukuran teks lebih kecil di layar kecil */
+            font-size: 2.5rem;
         }
 
         .hero-section p {
-            margin-bottom: 20px; /* Mengurangi margin di bawah teks di layar kecil */
-            font-size: 1rem; /* Ukuran teks deskripsi lebih kecil */
+            margin-bottom: 20px;
+            font-size: 1rem;
         }
 
         .hero-section {
-            padding: 20px 10px; /* Mengurangi padding di layar kecil */
+            padding: 20px 10px;
         }
     }
 </style>
@@ -67,20 +67,20 @@
 </section>
 
 <!-- Card Articles -->
-<!-- Card Articles -->
 <section>
     <div class="container" style="padding: 0 15px;">
         <div class="row g-4" id="article-list" style="display: flex; flex-direction: column;">
             <?php if (!empty($articles)): ?>
                 <?php foreach ($articles as $article): ?>
                     <div class="col-12 article-item" data-title="<?= strtolower($article['judul_artikel']); ?>" data-date="<?= strtotime($article['created_at']); ?>">
-                        <div class="card h-100 d-flex flex-row card-shadow" style="margin: 10px 0; align-items: center;">
+                        <div class="card h-100 d-flex flex-row card-shadow" style="margin: 10px 0; align-items: stretch; flex-wrap: wrap;">
                             <div class="card-img-wrapper">
                                 <img src="<?= base_url('image/' . $article['foto_artikel']); ?>" class="card-img-top article-img" alt="<?= $article['judul_artikel']; ?>">
                             </div>
-                            <div class="card-body" style="flex: 1; padding: 20px;">
+                            <div class="card-body" style="flex: 1; padding: 20px; position: relative;">
                                 <h5 class="card-title"><?= $article['judul_artikel']; ?></h5>
-                                <p class="card-text deskripsi-artikel"><?= $article['deskripsi_artikel']; ?></p>
+                                <p class="card-text penulis-artikel"><strong>Writer:</strong> <?= $article['penulis']; ?></p>
+                                <p class="card-text sinopsis-artikel"><?= $article['sinopsis']; ?></p>
                                 <p class="card-text" style="font-size: 0.9rem; color: #999;">Created at: <?= date('d M Y', strtotime($article['created_at'])); ?></p>
                                 <a href="<?= base_url('artikel/detail/' . $article['slug']); ?>" class="read-more">Read-more</a>
                             </div>
@@ -98,6 +98,8 @@
     .card-shadow {
         box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
         transition: transform 0.3s, box-shadow 0.3s;
+        border-radius: 15px;
+        overflow: hidden;
     }
 
     .card-shadow:hover {
@@ -108,23 +110,35 @@
     .card {
         display: flex;
         flex-direction: row;
+        align-items: stretch;
+        border-radius: 15px;
+        overflow: hidden;
     }
 
     .card-img-wrapper {
         flex-shrink: 0;
         width: 200px;
+        height: 200px;
         background-color: #f9f9f9;
         overflow: hidden;
-        border-radius: 10px 0 0 10px;
+        border-radius: 15px 0 0 15px;
+        margin-bottom: 10px;
     }
 
     .article-img {
         object-fit: cover;
         width: 100%;
         height: 100%;
+        border-radius: 15px 0 0 15px;
     }
 
-    .deskripsi-artikel {
+    .card-body {
+        word-wrap: break-word;
+        flex: 1;
+        padding: 20px;
+    }
+
+    .sinopsis-artikel {
         display: -webkit-box;
         -webkit-line-clamp: 3;
         -webkit-box-orient: vertical;
@@ -132,7 +146,24 @@
         text-overflow: ellipsis;
     }
 
-    /* Responsiveness */
+    .read-more {
+        position: absolute;
+        bottom: 20px;
+        right: 20px;
+        background-color: #F7C433;
+        color: white !important;
+        padding: 10px 15px;
+        text-decoration: none;
+        border-radius: 25px;
+        font-weight: bold;
+        transition: background-color 0.3s ease, transform 0.2s ease;
+    }
+
+    .read-more:hover {
+        background-color: #F39C12;
+        transform: translateY(-2px);
+    }
+
     @media (max-width: 768px) {
         .card {
             flex-direction: column;
@@ -147,9 +178,13 @@
         .card-body {
             padding: 15px;
         }
+
+        .read-more {
+            bottom: 10px;
+            right: 10px;
+        }
     }
 </style>
-
 
 <!-- CSS untuk gaya baru Sort By -->
 <style>
@@ -192,13 +227,13 @@
     }
 
     .card-shadow {
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Shadow dasar */
-        transition: transform 0.3s, box-shadow 0.3s; /* Transisi untuk efek 3D */
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        transition: transform 0.3s, box-shadow 0.3s;
     }
 
     .card-shadow:hover {
-        transform: translateY(-10px) scale(1.05); /* Efek angkat sedikit dan membesar */
-        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3); /* Shadow lebih tebal saat hover */
+        transform: translateY(-10px) scale(1.05);
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
     }
 
     .card-img-wrapper {
@@ -209,7 +244,7 @@
     .article-img {
         object-fit: cover;
         width: 100%;
-        height: 250px; /* Besarkan ukuran gambar */
+        height: 250px;
     }
 
     .deskripsi-artikel {
@@ -222,15 +257,42 @@
 
     .read-more {
         text-decoration: underline;
-        color: #F6C135;
-        font-weight: bold;
-        display: block;
-        margin-top: 15px;
+        color: #F39C12;
     }
 
     .read-more:hover {
-        color: #F7C433;
+        color: #E67E22;
     }
 </style>
+
+<!-- JavaScript untuk mengatur urutan artikel -->
+<script>
+    function sortArticles() {
+        var sortBy = document.getElementById('sort-select').value;
+        var articles = document.querySelectorAll('.article-item');
+        var articleList = Array.from(articles);
+        
+        articleList.sort(function(a, b) {
+            var dateA = a.getAttribute('data-date');
+            var dateB = b.getAttribute('data-date');
+            var titleA = a.getAttribute('data-title');
+            var titleB = b.getAttribute('data-title');
+
+            if (sortBy === 'alphabetical') {
+                return titleA.localeCompare(titleB);
+            } else if (sortBy === 'date_newest') {
+                return dateB - dateA; // Sort by newest
+            } else if (sortBy === 'date_oldest') {
+                return dateA - dateB; // Sort by oldest
+            }
+        });
+
+        var articleContainer = document.getElementById('article-list');
+        articleContainer.innerHTML = ''; // Clear existing articles
+        articleList.forEach(function(article) {
+            articleContainer.appendChild(article); // Append sorted articles
+        });
+    }
+</script>
 
 <?= $this->endSection(); ?>
