@@ -1,5 +1,4 @@
 <?php
-
 namespace App\Database\Migrations;
 
 use CodeIgniter\Database\Migration;
@@ -27,7 +26,6 @@ class TbMeta extends Migration
             ],
             'meta_description_id' => [
                 'type'       => 'LONGTEXT',
-                'constraint' => '255',
                 'null'       => true,
             ],
             'meta_title_en' => [
@@ -37,13 +35,11 @@ class TbMeta extends Migration
             ],
             'meta_description_en' => [
                 'type'       => 'LONGTEXT',
-                'constraint' => '255',
                 'null'       => true,
             ],
-           
         ]);
 
-        $this->forge->addKey('id_seo', true); 
+        $this->forge->addKey('id_seo', true);
         $this->forge->createTable('tb_meta');
     }
 

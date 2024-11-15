@@ -20,7 +20,7 @@ class CreateAboutTable extends Migration
                 'null'       => true,
                 'comment'    => 'Content for about section',
             ],
-            'brand_value' => [
+            'value' => [
                 'type'       => 'TEXT',
                 'null'       => true,
                 'comment'    => 'Brand values',
