@@ -2,6 +2,7 @@
 namespace App\Controllers;
 
 use App\Models\AboutModel;
+use App\Models\MetaModel;
 use App\Models\TeamModel;
 use App\Models\ProfileModel; // Tambahkan ini untuk mengambil profil/logo perusahaan
 
@@ -20,6 +21,9 @@ class AboutController extends BaseController
 
     public function about()
     {
+        $metamodel = new MetaModel();
+        $meta = $metamodel->where('nama_halaman', 'Partnership')->first();
+        
         // Ambil data brand values dan konten tentang Digifusion
         $brandValues = $this->aboutModel->findAllBrandValues();
         $aboutContent = $this->aboutModel->findAboutContent();
@@ -32,6 +36,7 @@ class AboutController extends BaseController
 
         // Kirim semua data ke view
         return view('tampil/about', [
+            'meta' => $meta, 
             'brandValues' => $brandValues, 
             'aboutContent' => $aboutContent, 
             'teamMembers' => $teamMembers,
