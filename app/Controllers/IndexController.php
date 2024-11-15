@@ -54,12 +54,12 @@ class IndexController extends BaseController
     ]);
 }
     // Method untuk menampilkan halaman about
-    public function about()
-    {
-        $profilModel = new ProfileModel();
-        $profil = $profilModel->findAll(); 
-        return view('tampil/about', ['profil' => $profil]);
-    }
+    // public function about()
+    // {
+    //     $profilModel = new ProfileModel();
+    //     $profil = $profilModel->findAll(); 
+    //     return view('tampil/about', ['profil' => $profil]);
+    // }
 
     // Method untuk menampilkan halaman produk
     public function product()

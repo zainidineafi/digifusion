@@ -79,7 +79,7 @@
                             </div>
                             <div class="card-body" style="flex: 1; padding: 20px; position: relative;">
                                 <h5 class="card-title"><?= $article['judul_artikel']; ?></h5>
-                                <p class="card-text penulis-artikel"><strong>Writer:</strong> <?= $article['penulis']; ?></p>
+                                <p class="card-text penulis-artikel"><strong>Author :</strong> <?= $article['penulis']; ?></p>
                                 <p class="card-text sinopsis-artikel"><?= $article['sinopsis']; ?></p>
                                 <p class="card-text" style="font-size: 0.9rem; color: #999;">Created at: <?= date('d M Y', strtotime($article['created_at'])); ?></p>
                                 <a href="<?= base_url('artikel/detail/' . $article['slug']); ?>" class="read-more">Read-more</a>
@@ -225,44 +225,6 @@
         font-size: 0.8rem;
         color: #999;
     }
-
-    .card-shadow {
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-        transition: transform 0.3s, box-shadow 0.3s;
-    }
-
-    .card-shadow:hover {
-        transform: translateY(-10px) scale(1.05);
-        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
-    }
-
-    .card-img-wrapper {
-        padding: 10px;
-        background-color: #f9f9f9;
-    }
-
-    .article-img {
-        object-fit: cover;
-        width: 100%;
-        height: 250px;
-    }
-
-    .deskripsi-artikel {
-        display: -webkit-box;
-        -webkit-line-clamp: 4;
-        -webkit-box-orient: vertical;
-        overflow: hidden;
-        text-overflow: ellipsis;
-    }
-
-    .read-more {
-        text-decoration: underline;
-        color: #F39C12;
-    }
-
-    .read-more:hover {
-        color: #E67E22;
-    }
 </style>
 
 <!-- JavaScript untuk mengatur urutan artikel -->
@@ -293,6 +255,22 @@
             articleContainer.appendChild(article); // Append sorted articles
         });
     }
+
+    document.addEventListener('DOMContentLoaded', function () {
+        // Default sort setting
+        var defaultSort = 'date_newest'; // Set default here
+
+        // Set the dropdown to the default sort option
+        document.getElementById('sort-select').value = defaultSort;
+
+        // Apply the initial sorting
+        sortArticles();
+
+        // Update dropdown text when option changes
+        document.getElementById('sort-select').addEventListener('change', function () {
+            sortArticles();
+        });
+    });
 </script>
 
 <?= $this->endSection(); ?>
