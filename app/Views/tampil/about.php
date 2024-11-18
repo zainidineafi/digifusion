@@ -1,4 +1,4 @@
-<?= $this->extend('Layout/app'); ?>
+<?=$this->extend('layout/app'); ?>
 
 <!-- Meta Tags -->
 <?= $this->section('head'); ?>
@@ -7,13 +7,13 @@
 <title>About | Learn more about what Diggers are.</title>
 <?= $this->endSection(); ?>
 
-<?= $this->section('content'); ?>
+<?=$this->section('content'); ?>
 
-<!-- Banner -->
+<!-- banner---> 
 <section class="hero-section text-center" style="background-color: #F7C433; padding: 40px 20px; border-radius: 30px;">
     <div class="container">
         <h1 style="font-size: 3rem; color: #FFFFFF; text-decoration: underline;">About Digifusion</h1>
-        <p style="color: #FFFFFF; margin-bottom: 10px; font-size: 1.2rem;">Learn more about what Diggers are.</p>
+        <p style="color: #FFFFFF; margin-bottom: 40px; font-size: 1.2rem;">Learn more about what Diggers are.</p>
     </div>
 </section>
 <!-- CSS -->
@@ -53,6 +53,35 @@
             padding: 20px 10px;
         }
     }
+
+  /* Founder Section */
+.founder-info {
+    padding: 15px; /* Mengurangi padding untuk menghemat ruang */
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    margin: 10px;
+}
+
+.founder-image {
+    max-width: 80px; /* Perkecil gambar founder */
+    border-radius: 50%;
+    margin-bottom: 10px;
+}
+
+.founder-info h3 {
+    font-size: 1.1rem; /* Sesuaikan ukuran font judul */
+    margin: 10px 0 5px;
+}
+
+.founder-info p {
+    font-size: 0.9rem; /* Sesuaikan ukuran font paragraf */
+    color: #555;
+    line-height: 1.3;
+    margin: 0;
+}
+
+
 </style>
 
 
