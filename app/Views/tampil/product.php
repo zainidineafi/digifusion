@@ -122,40 +122,40 @@
 
 <!-- CSS untuk membatasi deskripsi dan efek 3D pada card -->
 <style>
-    .team-section {
+.team-section {
     display: flex;
+    flex-direction: column; /* Default for smaller screens */
     align-items: center;
-   
     background-color: #fff;
-    padding: 50px;
+    padding: 20px;
     border-radius: 10px;
+    gap: 20px;
 }
 
 .text-content {
-    max-width: 50%;
-    margin-left: 20px;
+    max-width: 90%; /* Adjust for smaller screens */
+    margin: 0;
+    text-align: center;
 }
 
-
 .team-heading {
-    font-size: 32px;
+    font-size: 2rem; /* Responsive font size */
     color: #333;
     font-weight: bold;
     margin-bottom: 20px;
 }
 
 .team-description {
-    font-size: 16px;
+    font-size: 1rem;
     color: #666;
     line-height: 1.6;
 }
 
 .image-content img {
     width: 100%;
-    max-width: 600px;
+    max-width: 400px; /* Restrict for smaller screens */
     border-radius: 10px;
-    margin-left: auto;
-    margin-right: auto;
+    margin: 0 auto; /* Center alignment */
     display: block;
 }
 
@@ -163,31 +163,29 @@
     display: block;
     width: 100%;
     text-align: center;
-    font-size: 1.5em;
+    font-size: 1.5rem;
     font-weight: bold;
-    padding: 20px 0;
+    padding: 10px 0;
     color: #333;
     background-color: #F7C433;
-
 }
-
 
 .card-container {
-        display: flex;
-    justify-content: space-around;
-    align-items: flex-start;
+    display: flex;
+    flex-wrap: wrap; /* Allow wrapping */
+    justify-content: center; /* Align cards centrally */
+    gap: 20px;
     width: 100%;
     padding: 20px;
-    gap: 20px;
     background-color: #F7C433;
 }
-
 
 .card {
     background-color: white;
     border-radius: 10px;
     padding: 20px;
-    width: 30%;
+    width: calc(100% - 40px); /* Default for mobile */
+    max-width: 300px; /* Limit for larger screens */
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     text-align: center;
     align-items: center;
@@ -195,67 +193,46 @@
 }
 
 .card-icon {
-    height: auto;
     margin-bottom: 20px;
-    justify-content: center;
-    align-items: center;
-    height: auto;
-    width: 150px;
+    width: 100px; /* Resize for smaller screens */
+    max-width: 150px;
 }
 
 .card-title {
-    font-size: 1.5em;
-    color: #ff6600; /* Example for the title color */
+    font-size: 1.2rem; /* Scaled down */
+    color: #ff6600;
     margin-bottom: 10px;
 }
 
 .card-description {
-    font-size: 1em;
+    font-size: 0.9rem; /* Adjust font size */
     color: #333;
     margin-bottom: 20px;
     line-height: 1.5;
 }
 
-
-
-
-@media (max-width: 768px) {
-    .card-container {
-        flex-direction: column;
-        align-items: center;
-    }
-
-    .card {
-        width: 50%;
-        margin-bottom: 20px;
-    }
-}
-
 .banner {
     display: flex;
+    flex-direction: column; /* Stack content */
     justify-content: center;
     align-items: center;
     position: relative;
-    height: 60vh;
+    height: 40vh; /* Smaller banner for mobile */
 }
 
 .overlay {
     text-align: center;
     color: white;
     border-radius: 10px;
-    margin-bottom: 200px;
 }
 
 h1 {
-    font-size: 2.5em;
-    margin-top: -20px;
-
+    font-size: 2rem; /* Adjusted for mobile */
 }
 
 p {
-    font-size: 1.2em;
-    margin-bottom: 30px;
-    margin-top: -10px;
+    font-size: 1rem; /* Adjusted for mobile */
+    margin: 10px 0;
 }
 
 .button {
@@ -264,13 +241,43 @@ p {
     border: 2px solid white;
     padding: 10px 20px;
     border-radius: 20px;
-    font-size: 1em;
+    font-size: 1rem;
     transition: 0.3s;
 }
 
 .button:hover {
     background-color: white;
     color: black;
+}
+
+/* Media Query for tablets */
+@media (min-width: 768px) {
+    .team-section {
+        flex-direction: row; /* Row for larger screens */
+        padding: 40px;
+    }
+
+    .text-content {
+        max-width: 50%;
+        text-align: left;
+        margin: 0 20px;
+    }
+
+    .image-content img {
+        max-width: 500px;
+    }
+
+    .card {
+        width: 30%; /* Larger cards for tablet */
+    }
+
+    .banner {
+        height: 60vh;
+    }
+
+    h1 {
+        font-size: 2.5rem;
+    }
 }
 
 
