@@ -33,6 +33,6 @@ class TeamSeeder extends Seeder
         ];
 
         // Insert data ke tabel tb_team
-        $this->db->table('tb_team')->insertBatch($data);
+        $this->db->table('tb_founder')->insertBatch($data);
     }
 }
