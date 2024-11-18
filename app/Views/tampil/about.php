@@ -146,23 +146,47 @@
 
 </section>
 
-<!-- Our Team Section -->
-<section class="our-team-section">
-    <h1>Our Team</h1>
-    <p>Kenalan dengan tim kami yang hebat!</p>
-    <div class="cards-container">
-        <?php foreach ($teamMembers as $team): ?>
-            <div class="card" onclick="showInfo('<?= $team['name']; ?>', '<?= $team['position']; ?>')">
-                <img src="<?= base_url('image/' . $team['photo']); ?>" alt="<?= $team['name']; ?>">
-                <div class="logo"><img src="jago-logo.png" alt="Logo"></div>
-                <div class="card-content">
-                    <h2><?= $team['name']; ?></h2>
-                    <p><?= $team['position']; ?></p>
+<section class="founders-section">
+    <h2>Founder of Jago Digital Marketing</h2>
+    <p>Siapa sih pendiri dari Jago Digital Marketing? Yuk kenalan dulu!</p>
+    <div class="founders">
+        <?php if (!empty($founder)): ?>
+            <?php foreach ($founder as $founderItem): ?>
+                <div class="founder-card">
+                    <!-- Founder Photo -->
+                    <div class="profile-wrapper">
+                        <img src="<?= base_url('uploads/foto_founder/' . $founderItem->foto_founder) ?>" alt="<?= esc($founderItem->nama_founder) ?>" class="profile-img">
+                    </div>
+
+                    <!-- Founder Info -->
+                    <div class="info">
+                        <h3><?= esc($founderItem->nama_founder) ?></h3>
+                        <p class="role"><?= esc($founderItem->jabatan_founder) ?></p>
+
+                        <!-- Founder Description -->
+                        <p class="description"><?= esc($founderItem->deskripsi_founder ?? 'Deskripsi tidak tersedia') ?></p>
+
+                        <!-- Social Media Links -->
+                        <?php if (!empty($founderItem->links)): ?>
+                            <div class="social-media">
+                                <?php foreach ($founderItem->links as $socialMedia): ?>
+                                    <a href="<?= esc($socialMedia->link_founder) ?>" target="_blank" class="social-link">
+                                        <img src="<?= base_url('uploads/icons/' . $socialMedia->icon_link_founder) ?>" alt="<?= esc($socialMedia->nama_link_founder) ?>" class="social-icon">
+                                        <span class="social-text"><?= esc($socialMedia->nama_link_founder) ?></span>
+                                    </a>
+                                <?php endforeach; ?>
+                            </div>
+                        <?php else: ?>
+                            <p>Sosial media tidak tersedia.</p>
+                        <?php endif; ?>
+
+
+                    </div>
                 </div>
-                <!-- Background Behind Card (Setengah Card) -->
-                <div class="background-half"></div>
-            </div>
-        <?php endforeach; ?>
+            <?php endforeach; ?>
+        <?php else: ?>
+            <p>Informasi pendiri tidak tersedia.</p>
+        <?php endif; ?>
     </div>
 </section>
 
@@ -325,6 +349,152 @@
         color: black;
         text-decoration: none;
         cursor: pointer;
+    }
+</style>
+
+<!-- Updated CSS -->
+<style>
+    .founders-section {
+        padding: 40px 20px;
+        max-width: 1200px;
+        margin: 0 auto;
+        text-align: center;
+        background-color: #f2f2f2;
+        border-radius: 10px;
+    }
+
+    .founders {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 20px;
+    }
+
+    .founder-card {
+        background-color: white;
+        border-radius: 15px;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        overflow: hidden;
+        text-align: center;
+        transition: transform 0.3s ease;
+        width: 100%;
+        max-width: 350px;
+        position: relative;
+    }
+
+    .founder-card:hover {
+        transform: translateY(-10px);
+    }
+
+    .profile-wrapper {
+        width: 100%;
+        padding-top: 100%;
+        position: relative;
+    }
+
+    .profile-img {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        border-bottom-left-radius: 50%;
+        border-bottom-right-radius: 50%;
+    }
+
+    .info {
+        padding: 20px;
+        background-color: #fff;
+        text-align: center;
+    }
+
+    .info h3 {
+        font-size: 22px;
+        margin-bottom: 5px;
+    }
+
+
+    .social-media {
+        display: flex;
+        flex-direction: column;
+        /* Mengatur elemen secara vertikal */
+        align-items: center;
+        /* Menyelaraskan elemen ke tengah */
+       
+        margin-top: 15px;
+        /* Jarak atas jika diperlukan */
+    }
+
+    .social-link {
+        display: flex;
+        align-items: center;
+        text-decoration: none;
+        color: #000000;
+    }
+
+    .social-icon {
+        width: 24px;
+        /* Ukuran ikon */
+        height: 24px;
+        /* Ukuran ikon */
+        margin-right: 8px;
+        /* Jarak kanan antara ikon dan teks */
+    }
+
+    .social-text {
+        font-size: 16px;
+        /* Ukuran teks */
+        line-height: 24px;
+        /* Menyelaraskan tinggi baris dengan tinggi ikon */
+    }
+
+
+    .social-link:hover .social-icon {
+        transform: scale(1.2);
+    }
+
+
+    .info .role {
+        font-size: 18px;
+        color: #FF9800;
+        margin-bottom: 10px;
+    }
+
+    .description {
+        font-size: 16px;
+        margin-bottom: 15px;
+        text-align: justify;
+    }
+
+    .social-media {
+        margin-top: 15px;
+    }
+
+    .social-link {
+        display: inline-block;
+        margin-right: 10px;
+    }
+
+    .social-icon {
+        width: 50px;
+        height: 50px;
+        transition: transform 0.3s ease;
+    }
+
+    .social-link:hover .social-icon {
+        transform: scale(1.2);
+    }
+
+    @media (max-width: 768px) {
+        .founders {
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .founder-card {
+            width: 100%;
+        }
     }
 </style>
 

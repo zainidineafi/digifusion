@@ -24,7 +24,32 @@
                         <span class="nav-link-text">Meta</span>
                     </a><!--//nav-link-->
                 </li><!--//nav-item-->
-                
+
+                <li class="nav-item">
+                    <!--//Bootstrap Icons: https://icons.getbootstrap.com/ -->
+                    <a class="nav-link <?= (current_url() == base_url('admin/founder/index')) ? 'active' : '' ?>" href="<?= base_url('admin/founder/index') ?>">
+                        <span class="nav-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-person" viewBox="0 0 16 16">
+                                <path d="M10 5a2 2 0 1 1-4 0 2 2 0 0 1 4 0z" />
+                                <path fill-rule="evenodd" d="M0 14s1-3 7-3 7 3 7 3V1H0v13z" />
+                            </svg>
+                        </span>
+                        <span class="nav-link-text">Founder</span>
+                    </a><!--//nav-link-->
+                </li><!--//nav-item-->
+
+                <li class="nav-item">
+                    <!--//Bootstrap Icons: https://icons.getbootstrap.com/ -->
+                    <a class="nav-link <?= (current_url() == base_url('admin/link_founder/index')) ? 'active' : '' ?>" href="<?= base_url('admin/link_founder/index') ?>">
+                        <span class="nav-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-link" viewBox="0 0 16 16">
+                                <path d="M6.354 0a2 2 0 0 1 1.414.586l1.5 1.5a2 2 0 0 1 0 2.828l-1.5 1.5a2 2 0 0 1-2.828 0l-1.5-1.5A2 2 0 0 1 0 4.828l1.5-1.5A2 2 0 0 1 2.828 0h3.526zM4.828 2.828a1 1 0 0 0 0 1.414l1.5 1.5a1 1 0 0 0 1.414 0l1.5-1.5a1 1 0 0 0 0-1.414l-1.5-1.5a1 1 0 0 0-1.414 0l-1.5 1.5zM16 11.172a2 2 0 0 1-1.414.586H10.586a2 2 0 0 1-1.414-.586l-1.5-1.5a2 2 0 0 1 0-2.828l1.5-1.5a2 2 0 0 1 2.828 0l1.5 1.5A2 2 0 0 1 16 11.172zM10.586 12a1 1 0 0 0 0-1.414l-1.5-1.5a1 1 0 0 0-1.414 0l-1.5 1.5a1 1 0 0 0 0 1.414l1.5 1.5a1 1 0 0 0 1.414 0l1.5-1.5z" />
+                            </svg>
+                        </span>
+                        <span class="nav-link-text">Link Founder</span>
+                    </a><!--//nav-link-->
+                </li><!--//nav-item-->
+
                 <!--//Bootstrap Icons: https://icons.getbootstrap.com/ -->
                 </li><!--//nav-item-->
             </ul><!--//app-menu-->
