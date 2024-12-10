@@ -70,7 +70,7 @@
             left: 88px;
             right: 55px;
             bottom: 30px;
-            background-color: #F8C43A;
+            background-color: #4BB3BF;
             z-index: -1;
             border-radius: 10px;
             box-sizing: border-box;
@@ -119,7 +119,7 @@
             text-decoration: none;
             font-size: 1rem;
             font-weight: bold;
-            color: #F7C433;
+            color: #4BB3BF;
         }
 
         .platform-section .card a span {
@@ -138,7 +138,7 @@
 <body>
 
 <!-- Banner -->
-<section class="hero-section text-center" style="background-color: #F7C433; padding: 40px 20px; border-radius: 30px;">
+<section class="hero-section text-center" style="background-color: #4BB3BF; padding: 40px 20px; border-radius: 30px;">
     <div class="container">
         <h1 style="font-size: 3rem; color: #FFFFFF; text-decoration: underline;">Contact</h1>
         <p style="color: #FFFFFF; margin-bottom: 40px; font-size: 1.2rem;">Contact us if there is anything you need</p>

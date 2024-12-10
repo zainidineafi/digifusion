@@ -33,7 +33,7 @@ $routes->get('admin/link_founder/delete/(:any)', 'admin\LinkFounderController::d
 
 //start user
 $routes->get('/', 'IndexController::index');
-$routes->get('/index', 'IndexController::index');
+// $routes->get('/index', 'IndexController::index');
 // $routes->get('/about', 'IndexController::about');
 $routes->get('/product', 'IndexController::product');
 $routes->get('/product/detail/(:any)', 'IndexController::productDetail/$1');

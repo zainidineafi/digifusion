@@ -22,7 +22,7 @@ class AboutController extends BaseController
     public function about()
     {
         $metamodel = new MetaModel();
-        $meta = $metamodel->where('nama_halaman', 'Partnership')->first();
+        $meta = $metamodel->where('nama_halaman', 'About Us')->first();
         
          // Load Founder Model
          $founderModel = new FounderModels();

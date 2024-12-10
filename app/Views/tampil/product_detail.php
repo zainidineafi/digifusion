@@ -26,7 +26,7 @@
         <div class="row align-items-center">
             <!-- Gambar Produk Besar -->
             <div class="col-md-6">
-                <img src="<?= base_url('image/' . urlencode($product['foto_produk'])); ?>" alt="<?= $product['nama_produk_in']; ?>" class="img-fluid" style="border-radius: 10px; box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);">
+                <img src="<?= base_url('uploads/articles/' . urlencode($product['foto_produk'])); ?>" alt="<?= $product['nama_produk_in']; ?>" class="img-fluid" style="border-radius: 10px; box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);">
             </div>
 
             <!-- Informasi Detail Produk -->

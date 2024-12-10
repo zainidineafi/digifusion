@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet">
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" />
-  <link rel="icon" href="<?= base_url('image/logo.png'); ?>" type="image/png">
+  <link rel="icon" href="<?= base_url('logo/favicon.png'); ?>" type="image/png">
   <title> <?= $meta->meta_title_en ?? 'Digifusion Default' ?> </title>
   <!-- Meta Tags -->
   <meta name="title" content="<?= $meta->meta_title_en ?? 'Digifusion Default' ?>">
@@ -113,7 +113,7 @@
     }
 
     .navbar-nav .nav-link.active {
-      background-color: #F6C33C;
+      background-color: #4BB3BF;
       color: black;
       border-radius: 20px;
       padding: 10px 15px;
@@ -152,7 +152,7 @@
       <a class="navbar-brand" href="#" style="margin-left: 25px;">
         <?php if (!empty($profil)) : ?>
           <?php foreach ($profil as $i) : ?>
-            <img src="<?= base_url('image/' . $i['logo_perusahaan']); ?>" alt="Logo" style="height: 40px;">
+            <img src="<?= base_url('logo/' . $i['logo_perusahaan']); ?>" alt="Logo" style="height: 40px;">
           <?php endforeach; ?>
         <?php else: ?>
           <p>Logo perusahaan belum tersedia.</p>
@@ -164,7 +164,7 @@
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
           <li class="nav-item">
-            <a class="nav-link" href="/index" id="home-link">Home</a>
+            <a class="nav-link" href="/" id="home-link">Home</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="/about" id="about-link">About Us</a>
@@ -190,7 +190,7 @@
     const currentLocation = window.location.pathname;
 
     const navLinks = {
-      "/index": "home-link",
+      "/": "home-link",
       "/about": "about-link",
       "/product": "product-link",
       "/artikel": "artikel-link",
@@ -225,7 +225,7 @@
               <h6 class="text-uppercase mb-4 font-weight-bold">Webpages</h6>
               <p><a class="text-dark" href="/index">Home</a></p>
               <p><a class="text-dark" href="/about">About</a></p>
-              <p><a class="text-dark" href="/product">Product</a></p>
+              <p><a class="text-dark" href="/product">Services</a></p>
               <p><a class="text-dark" href="/artikel">Article</a></p>
               <p><a class="text-dark" href="/partnership">Partnership</a></p>
               <p><a class="text-dark" href="/contact">Contact</a></p>

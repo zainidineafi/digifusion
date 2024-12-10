@@ -1,15 +1,15 @@
 <?= $this->extend('layout/app'); ?>
 <?= $this->section('head'); ?>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Read the latest articles about Diggers. Explore insights, updates, and information to enhance your knowledge.">
-    <title>Articles - Diggers</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Read the latest articles about Diggers. Explore insights, updates, and information to enhance your knowledge.">
+<title>Articles - Diggers</title>
 <?= $this->endSection(); ?>
 
 <?= $this->section('content'); ?>
 
 <!-- Banner -->
-<section class="hero-section text-center" style="background-color: #F7C433; padding: 40px 20px; border-radius: 30px;">
+<section class="hero-section text-center" style="background-color: #4BB3BF; padding: 40px 20px; border-radius: 30px;">
     <div class="container">
         <h1 style="font-size: 3rem; color: #FFFFFF; text-decoration: underline;">Blogs</h1>
         <p style="color: #FFFFFF; margin-bottom: 40px; font-size: 1.2rem;">Read some of the existing Blogs about Diggers</p>
@@ -75,14 +75,14 @@
                     <div class="col-12 article-item" data-title="<?= strtolower($article['judul_artikel']); ?>" data-date="<?= strtotime($article['created_at']); ?>">
                         <div class="card h-100 d-flex flex-row card-shadow" style="margin: 10px 0; align-items: stretch; flex-wrap: wrap;">
                             <div class="card-img-wrapper">
-                                <img src="<?= base_url('image/' . $article['foto_artikel']); ?>" class="card-img-top article-img" alt="<?= $article['judul_artikel']; ?>">
+                                <img src="<?= base_url('uploads/articles/' . $article['foto_artikel']); ?>" class="card-img-top article-img" alt="<?= $article['judul_artikel']; ?>">
                             </div>
                             <div class="card-body" style="flex: 1; padding: 20px; position: relative;">
                                 <h5 class="card-title"><?= $article['judul_artikel']; ?></h5>
                                 <p class="card-text penulis-artikel"><strong>Author :</strong> <?= $article['penulis']; ?></p>
                                 <p class="card-text sinopsis-artikel"><?= $article['sinopsis']; ?></p>
                                 <p class="card-text" style="font-size: 0.9rem; color: #999;">Created at: <?= date('d M Y', strtotime($article['created_at'])); ?></p>
-                                <a href="<?= base_url('artikel/detail/' . $article['slug']); ?>" class="read-more">Read-more</a>
+                                <a href="<?= base_url('artikel/detail/' . $article['slug']); ?>" class="btn-custom">Read-more</a>
                             </div>
                         </div>
                     </div>
@@ -150,7 +150,7 @@
         position: absolute;
         bottom: 20px;
         right: 20px;
-        background-color: #F7C433;
+        background-color: #4BB3BF;
         color: white !important;
         padding: 10px 15px;
         text-decoration: none;
@@ -200,7 +200,7 @@
 
     .custom-select {
         background-color: #fff;
-        border: 2px solid #F6C135;
+        border: 2px solid #4BB3BF;
         border-radius: 8px;
         padding: 10px;
         font-size: 1rem;
@@ -213,7 +213,7 @@
 
     .custom-select:focus {
         outline: none;
-        border-color: #F7C433;
+        border-color: #4BB3BF;
     }
 
     .custom-select-wrapper::after {
@@ -227,13 +227,52 @@
     }
 </style>
 
+<style>
+    .btn-custom {
+        display: inline-block;
+        background-color: #4BB3BF;
+        color: #fff;
+        text-align: center;
+        text-decoration: none;
+        padding: 10px 20px;
+        border-radius: 5px;
+        font-size: 16px;
+        font-weight: bold;
+        transition: background-color 0.3s, background-image 0.5s linear;
+        border: none;
+        cursor: pointer;
+    }
+
+    .btn-custom:hover {
+        background: linear-gradient(90deg,
+                #4BB3BF,
+                #D8E8E9,
+                #FC915E);
+        background-size: 300%;
+        /* Untuk efek gerakan */
+        animation: gradient-slide 5s infinite linear;
+        /* Gradasi bergerak */
+    }
+
+    /* Animasi gradasi */
+    @keyframes gradient-slide {
+        0% {
+            background-position: 0%;
+        }
+
+        100% {
+            background-position: 100%;
+        }
+    }
+</style>
+
 <!-- JavaScript untuk mengatur urutan artikel -->
 <script>
     function sortArticles() {
         var sortBy = document.getElementById('sort-select').value;
         var articles = document.querySelectorAll('.article-item');
         var articleList = Array.from(articles);
-        
+
         articleList.sort(function(a, b) {
             var dateA = a.getAttribute('data-date');
             var dateB = b.getAttribute('data-date');
@@ -256,7 +295,7 @@
         });
     }
 
-    document.addEventListener('DOMContentLoaded', function () {
+    document.addEventListener('DOMContentLoaded', function() {
         // Default sort setting
         var defaultSort = 'date_newest'; // Set default here
 
@@ -267,7 +306,7 @@
         sortArticles();
 
         // Update dropdown text when option changes
-        document.getElementById('sort-select').addEventListener('change', function () {
+        document.getElementById('sort-select').addEventListener('change', function() {
             sortArticles();
         });
     });

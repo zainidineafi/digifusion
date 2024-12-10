@@ -21,7 +21,7 @@
         }
 
         .hero-section {
-            background-image: url('bg1.png'); /* Menjadikan gambar sebagai latar belakang */
+            background-image: url('image/background.png'); /* Menjadikan gambar sebagai latar belakang */
             background-size: cover; /* Memastikan gambar memenuhi area */
             background-position: center; /* Memusatkan gambar */
             color: #fff; /* Warna teks putih untuk kontras */
@@ -194,7 +194,7 @@
 
 <!-- why diggers -->
 <section class="container-fluid pt-4 pb-5">
-    <h1 class="text-center mt-5 pt-5" style="color: #FAB937">Why Diggers?</h1>
+    <h1 class="text-center mt-5 pt-5" style="color: #4BB3BF">Why Diggers?</h1>
     <div class="text-center mt-3 mb-3" style="color: #202020;">
         <p>For nearly two decades, Diggers has consistently been a frontrunner in the 
         <br>integration and automation software market. With over 20,000 global customers, 
@@ -209,7 +209,7 @@
 
 <!-- sebelum persen -->
 <section class="container-fluid" style="padding: 0; margin: 0;">
-    <div class="row mt-5" style="background-color: #F7C433; width: 100%; min-height: 470px; margin: 0; padding: 0;">
+    <div class="row mt-5" style="background-color: #4BB3BF; width: 100%; min-height: 470px; margin: 0; padding: 0;">
         <!-- Kolom untuk teks -->
         <div class="col-md-6" style="display: flex; align-items: center; height: 100%;">
             <div style="color: #FFFFFF; padding: 0 20px; text-align: left;">
@@ -227,7 +227,7 @@
 </section>
 
 <!-- data persen -->
-<div class="stats-section" style="position: relative; top: -50px; display: flex; flex-wrap: wrap; justify-content: space-around; padding: 20px; background-color: #fff; margin: 0 auto; width: 90%; border-radius: 10px; box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);">
+<div class="stats-section mt-5" style="position: relative; top: 0px; display: flex; flex-wrap: wrap; justify-content: space-around; padding: 20px; background-color: #fff; margin: 0 auto; width: 90%; border-radius: 10px; box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);">
     <div class="stat-box" style="flex: 1 1 200px; padding: 20px; text-align: center; border-radius: 10px; margin: 10px; background: #F6F2FB; box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);">
         <h3 style="margin: 10px 0; font-size: 36px; color: #6A33C2;">86%</h3>
         <p style="color: #777;">of IT leaders expect generative AI to play a significant role soon.</p>
@@ -294,7 +294,7 @@
             left: 88px;
             right: 55px;
             bottom: 30px;
-            background-color: #F8C43A;
+            background-color: #4BB3BF;
             z-index: -1;
             border-radius: 10px;
             box-sizing: border-box;
@@ -370,21 +370,21 @@
             <?php endforeach; ?>
         </div>
         <!-- Tombol Learn More di bawah semua card -->
-        <a href="<?= base_url('partnership'); ?>" class="btn btn-primary mt-4">Learn More</a>
+        <a href="<?= base_url('partnership'); ?>" class="btn-custom">Learn More</a>
     </div>
 </section>
 
 <!-- new nad blog -->
 <section class="container-fluid">
-    <h1 class="text-center mt-5 pt-4" style="color: #F6C33C">Uptodate News And Blog</h1>
+    <h1 class="text-center mt-5 pt-4" style="color: #4BB3BF">Update News And Blog</h1>
     <div class="row d-flex">
         <?php foreach ($artikel as $article): ?>
         <div class="col-md-4 mb-5">
             <div class="card">
-                <img src="<?= base_url('image/' . $article['foto_artikel']); ?>" class="card-img-top article-img" alt="<?= esc($article['judul_artikel']); ?>" style="height: 200px; object-fit: cover;">
+                <img src="<?= base_url('uploads/articles/' . $article['foto_artikel']); ?>" class="card-img-top article-img" alt="<?= esc($article['judul_artikel']); ?>" style="height: 200px; object-fit: cover;">
                 <div class="card-body">
-                    <p class="card-text" style="color: #F6C33C; font-weight: bold; text-decoration: underline;">
-                    <a href="<?= base_url('artikel/detail/' . $article['slug']); ?>" class="read-more">Read-more</a>
+                    <p class="card-text" style="color: #4BB3BF; font-weight: bold; text-decoration: underline;">
+                    <a href="<?= base_url('artikel/detail/' . $article['slug']); ?>" class="btn-custom">Read-more</a>
                     </p>
                     <h5 class="card-title"><?= esc($article['judul_artikel']); ?></h5>
                     <p class="card-text"><?= date('F d, Y', strtotime($article['created_at'])); ?></p>
@@ -397,7 +397,7 @@
 
 <!-- Success Stories Section -->
 <section class="container-fluid pt-3">
-    <h1 class="text-center mt-5 pt-4" style="color: #FAB937">Exploring Alumni Success Stories</h1>
+    <h1 class="text-center mt-5 pt-4" style="color: #4BB3BF">Exploring Alumni Success Stories</h1>
     <div class="text-center mt-3 mb-3" style="color: #393939;">
         <p>They have felt the excitement of learning digital marketing skills and achieving the success they want. <br>You next?</p>
     </div>
@@ -424,6 +424,39 @@
         <?php endforeach; ?>
     </div>
 </section>
+
+<style>
+    .btn-custom {
+    display: inline-block;
+    background-color: #4BB3BF;
+    color: #fff;
+    text-align: center;
+    text-decoration: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-size: 16px;
+    font-weight: bold;
+    transition: background-color 0.3s, background-image 0.5s linear;
+    border: none;
+    cursor: pointer;
+}
+
+.btn-custom:hover {
+    background: linear-gradient(90deg, 
+        #4BB3BF, 
+        #D8E8E9, 
+        #FC915E);
+    background-size: 300%; /* Untuk efek gerakan */
+    animation: gradient-slide 5s infinite linear; /* Gradasi bergerak */
+}
+
+/* Animasi gradasi */
+@keyframes gradient-slide {
+    0% { background-position: 0%; }
+    100% { background-position: 100%; }
+}
+</style>
+
 <script>
   // Menambahkan elemen logo
   const logo = document.querySelector(".logo").cloneNode(true);
