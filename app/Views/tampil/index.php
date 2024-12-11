@@ -21,7 +21,7 @@
         }
 
         .hero-section {
-            background-image: url('image/background.png'); /* Menjadikan gambar sebagai latar belakang */
+            background-image: url('image/background.jpg'); /* Menjadikan gambar sebagai latar belakang */
             background-size: cover; /* Memastikan gambar memenuhi area */
             background-position: center; /* Memusatkan gambar */
             color: #fff; /* Warna teks putih untuk kontras */
