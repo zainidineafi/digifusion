@@ -138,9 +138,9 @@
 <body>
 
 <!-- Banner -->
-<section class="hero-section text-center" style="background-color: #4BB3BF; padding: 40px 20px; border-radius: 30px;">
+<section class="hero-section text-center" style="background-image: url('image/bg-digifusion2.jpg'); padding: 40px 20px; border-radius: 30px;">
     <div class="container">
-        <h1 style="font-size: 3rem; color: #FFFFFF; text-decoration: underline;">Contact</h1>
+        <h1 style="font-size: 3rem; color: #FFFFFF; text-decoration: none;">Contact</h1>
         <p style="color: #FFFFFF; margin-bottom: 40px; font-size: 1.2rem;">Contact us if there is anything you need</p>
     </div>
 </section>
