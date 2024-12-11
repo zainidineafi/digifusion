@@ -86,20 +86,21 @@
 
 
 <!-- Brand Value Section -->
-<section class="platform-section py-5 mt-5">
+<section class="platform-section py-5 mt-4">
     <style>
         .platform-section {
             position: relative;
-            padding: 50px 0;
+            padding: 30px 0;
+            margin-bottom: 20px;
         }
 
         .platform-section::before {
             content: "";
             position: absolute;
-            top: 60px;
-            left: 88px;
-            right: 55px;
-            bottom: 30px;
+            top: 80px;
+            left: 240px;
+            right: 190px;
+            bottom: 20px;
             background-color: #4BB3BF;
             z-index: -1;
             border-radius: 10px;
@@ -107,20 +108,20 @@
         }
 
         .platform-section .container {
-            max-width: 90%;
+            max-width: 70%;
             background-color: #EEEEEE;
-            padding: 30px;
+            padding: 20px;
             border-radius: 10px;
             position: relative;
         }
 
         .platform-section h2 {
-            font-size: 2rem;
+            font-size: 1.8rem;
             color: #333;
         }
 
         .platform-section p {
-            font-size: 1rem;
+            font-size: 0.9rem;
             color: #555;
         }
 
@@ -133,8 +134,8 @@
         .platform-section .card {
             background-color: #fff;
             border: none;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-            border-radius: 10px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
             display: flex;
             flex-direction: column;
             justify-content: space-between;
@@ -147,33 +148,33 @@
 
         .platform-section .card a {
             text-decoration: none;
-            font-size: 1rem;
+            font-size: 0.9rem;
             font-weight: bold;
             color: #4BB3BF;
         }
 
         .platform-section .card a span {
-            font-size: 1.2rem;
+            font-size: 1rem;
         }
     </style>
 
     <div class="container text-center">
         <h2 class="font-weight-bold">Value</h2>
-        <p class="mb-3">A complete ecosystem to help you succeed.</p>
+        <p class="mb-2">A complete ecosystem to help you succeed.</p>
         <div class="row justify-content-center">
 
             <?php foreach ($brandValues as $value): ?>
-                <div class="mb-4">
-                    <div class="value-box p-4"
-                        style="background-color: #ffffff; color: #333; border: 1px solid #ddd; border-radius: 8px; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); transition: transform 0.2s ease, box-shadow 0.2s ease;">
-                        <p style="font-size: 1.1rem; text-align: center; line-height: 1.5;"><?= $value['value']; ?></p>
+                <div class="mb-3">
+                    <div class="value-box p-3"
+                        style="background-color: #ffffff; color: #333; border: 1px solid #ddd; border-radius: 8px; box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1); transition: transform 0.2s ease, box-shadow 0.2s ease;">
+                        <p style="font-size: 1rem; text-align: center; line-height: 1.4;"><?= $value['value']; ?></p>
                     </div>
                 </div>
             <?php endforeach; ?>
         </div>
     </div>
-
 </section>
+
 
 <section class="founders-section">
     <h2>Founder of Jago Digital Marketing</h2>
