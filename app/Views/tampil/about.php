@@ -386,7 +386,7 @@
 <style>
     .founders-section {
         padding: 40px 20px;
-        max-width: 1200px;
+        max-width: 1000px;
         margin: 0 auto;
         text-align: center;
         background-color: #f2f2f2;
@@ -408,7 +408,7 @@
         text-align: center;
         transition: transform 0.3s ease;
         width: 100%;
-        max-width: 350px;
+        max-width: 300px;
         position: relative;
     }
 
@@ -417,15 +417,15 @@
     }
 
     .profile-wrapper {
-        width: 100%;
-        padding-top: 100%;
+        width: 80%;
+        padding-top: 80%;
         position: relative;
     }
 
     .profile-img {
         position: absolute;
-        top: 0;
-        left: 0;
+        top: 10px;
+        left: 30px;
         width: 100%;
         height: 100%;
         object-fit: cover;

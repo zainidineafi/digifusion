@@ -188,7 +188,7 @@
 
 <!-- sebelum persen -->
 <section class="container-fluid" style="padding: 0; margin: 0;">
-    <div class="row mt-5" style="background-color: #4BB3BF; width: 100%; min-height: 470px; margin: 0; padding: 0;">
+    <div class="row mt-5" style="background-color: #4BB3BF; width: 100%; min-height: 470px; margin: 0; padding: 0; border-radius: 20px;">
         <!-- Kolom untuk teks -->
         <div class="col-md-6" style="display: flex; align-items: center; height: 100%;">
             <div style="color: #FFFFFF; padding: 0 20px; text-align: left;">
