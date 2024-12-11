@@ -132,16 +132,32 @@
     }
 
     footer {
-      padding: 30px 0;
+      padding: 0px;
+      /* Kurangi padding footer */
     }
 
     .footer-links {
-      padding: 10px 0;
+      padding: 0px;
     }
 
-    .container-fluid {
-      position: relative;
-      z-index: 1;
+    footer h6 {
+      font-size: 1.8rem;
+      /* Perbesar teks judul */
+      font-weight: bold;
+    }
+
+    footer p,
+    footer a {
+      font-size: 1.2rem;
+      /* Perbesar teks isi */
+      line-height: 1.8;
+    }
+
+    .webpages-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      row-gap: 10px;
+      column-gap: 20px;
     }
   </style>
 </head>
@@ -220,17 +236,23 @@
               <h6 class="text-uppercase mb-4 font-weight-bold">Diggers</h6>
               <p>Diggers is a training to improve online marketing, content strategy and digital advertising skills.</p>
             </div>
+
             <hr class="w-100 clearfix d-md-none" />
+
             <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mt-3">
               <h6 class="text-uppercase mb-4 font-weight-bold">Webpages</h6>
-              <p><a class="text-dark" href="/index">Home</a></p>
-              <p><a class="text-dark" href="/about">About</a></p>
-              <p><a class="text-dark" href="/product">Services</a></p>
-              <p><a class="text-dark" href="/artikel">Article</a></p>
-              <p><a class="text-dark" href="/partnership">Partnership</a></p>
-              <p><a class="text-dark" href="/contact">Contact</a></p>
+              <div class="webpages-grid">
+                <p><a class="text-dark" href="/index">Home</a></p>
+                <p><a class="text-dark" href="/about">About</a></p>
+                <p><a class="text-dark" href="/product">Services</a></p>
+                <p><a class="text-dark" href="/artikel">Article</a></p>
+                <p><a class="text-dark" href="/partnership">Partnership</a></p>
+                <p><a class="text-dark" href="/contact">Contact</a></p>
+              </div>
             </div>
+
             <hr class="w-100 clearfix d-md-none" />
+
             <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mt-3">
               <h6 class="text-uppercase mb-4 font-weight-bold">Contact</h6>
               <p><i class="fas fa-home mr-3"></i> New York, NY 10012, US</p>
