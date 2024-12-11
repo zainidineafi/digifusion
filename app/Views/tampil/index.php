@@ -21,7 +21,7 @@
         }
 
         .hero-section {
-            background-image: url('image/background.png'); /* Menjadikan gambar sebagai latar belakang */
+            background-image: url('image/background.jpg'); /* Menjadikan gambar sebagai latar belakang */
             background-size: cover; /* Memastikan gambar memenuhi area */
             background-position: center; /* Memusatkan gambar */
             color: #fff; /* Warna teks putih untuk kontras */
@@ -94,25 +94,7 @@
 </body>
 </html>
 
-<!-- collab pt -->
-<section class="container">
-  <div class="logo-box">
-    <!-- Tulisan di atas logo -->
-    <div class="text-center trusted-text">
-      <h2>Trusted by the world’s leading organizations</h2>
-    </div>
-    <div class="logo-container">
-      <div id="logo" class="logo mt-3 pt-3"> <!-- Mengurangi margin-top dan padding-top -->
-        <img src="1.png" alt="1">
-        <img src="2.png" alt="2">
-        <img src="3.png" alt="3">
-        <img src="4.png" alt="4">
-        <img src="5.png" alt="5">
-        <img src="6.png" alt="6">
-        <img src="7.png" alt="7">
-      </div>
-    </div>
-  </div>
+
 
   <style>
     /* Styling untuk teks di atas logo */
@@ -127,15 +109,12 @@
 
     /* Styling untuk logo box */
     .logo-box {
-      border: 2px solid #ccc; /* Box border */
-      border-radius: 10px; /* Box dengan sudut melengkung */
-      padding: 5px; /* Kurangi padding untuk memperkecil ketinggian box */
-      max-width: 80%; /* Batasi lebar box */
-      margin: auto;
-      position: relative;
-      top: -40px; /* Geser posisi box ke atas sedikit */
-      z-index: 1; /* Agar menumpuk di atas item sebelumnya */
-      background-color: #fff; /* Background putih pada box */
+    border: 2px solid #ccc;
+    border-radius: 10px;
+    padding: 15px; /* Tambahkan padding untuk memberi ruang lebih */
+    max-width: 80%;
+    margin: 50px auto; /* Tambahkan margin atas dan bawah */
+    background-color: #fff;
     }
 
     /* Styling untuk logo container */
@@ -209,7 +188,7 @@
 
 <!-- sebelum persen -->
 <section class="container-fluid" style="padding: 0; margin: 0;">
-    <div class="row mt-5" style="background-color: #4BB3BF; width: 100%; min-height: 470px; margin: 0; padding: 0;">
+    <div class="row mt-5" style="background-color: #4BB3BF; width: 100%; min-height: 470px; margin: 0; padding: 0; border-radius: 20px;">
         <!-- Kolom untuk teks -->
         <div class="col-md-6" style="display: flex; align-items: center; height: 100%;">
             <div style="color: #FFFFFF; padding: 0 20px; text-align: left;">
@@ -351,16 +330,16 @@
         }
     </style>
 
-    <div class="container text-center">
+    <!-- <div class="container text-center">
         <h2 class="mb-3 font-weight-bold">More than a platform</h2>
         <p class="mb-5">A complete ecosystem to help you succeed.</p>
         <div class="row justify-content-center">
             <?php foreach ($keunggulan as $item): ?>
-            <!-- Card -->
+
             <div class="col-md-3 mb-4 d-flex">
                 <div class="card h-100 p-3 text-center">
                     <div class="icon mb-3">
-                        <!-- Tampilkan logo -->
+
                         <img src="<?= base_url('image/' . $item['logo']); ?>" alt="<?= $item['judul']; ?> Icon" style="width: 40px;">
                     </div>
                     <h5 class="font-weight-bold"><?= $item['judul']; ?></h5>
@@ -369,9 +348,9 @@
             </div>
             <?php endforeach; ?>
         </div>
-        <!-- Tombol Learn More di bawah semua card -->
+
         <a href="<?= base_url('partnership'); ?>" class="btn-custom">Learn More</a>
-    </div>
+    </div> -->
 </section>
 
 <!-- new nad blog -->
@@ -396,34 +375,54 @@
 </section>
 
 <!-- Success Stories Section -->
-<section class="container-fluid pt-3">
+<!-- <section class="container-fluid pt-3">
     <h1 class="text-center mt-5 pt-4" style="color: #4BB3BF">Exploring Alumni Success Stories</h1>
     <div class="text-center mt-3 mb-3" style="color: #393939;">
         <p>They have felt the excitement of learning digital marketing skills and achieving the success they want. <br>You next?</p>
     </div>
 </section>
 <section class="container">
-    <div class="row g-4"> <!-- g-4 untuk memberikan jarak antar kolom -->
+    <div class="row g-4"> 
         <?php foreach ($komentar as $item): ?>
-        <div class="col-lg-3 col-md-6 d-flex align-items-stretch"> <!-- align-items-stretch agar card merentang vertikal -->
-            <div class="card h-100 d-flex flex-column"> <!-- flex-column untuk tata letak vertikal -->
-                <div class="card-body flex-grow-1"> <!-- Membuat card-body menempati ruang yang ada -->
+        <div class="col-lg-3 col-md-6 d-flex align-items-stretch"> 
+            <div class="card h-100 d-flex flex-column"> 
+                <div class="card-body flex-grow-1"> 
                     <p class="card-text">
                         "<?= $item['komentar']; ?>"
                     </p>
                 </div>
-                <div class="card-footer mt-auto d-flex align-items-center"> <!-- Menambahkan card-footer dengan mt-auto agar berada di dasar card -->
+                <div class="card-footer mt-auto d-flex align-items-center"> 
                     <img class="rounded-circle me-3 img-fluid" src="<?= base_url('image/' . $item['foto']); ?>" alt="Profile Image" style="width: 50px; height: 50px; object-fit: cover;">
                     <div class="profile-info">
-                        <h5 class="mb-0"><?= $item['nama']; ?></h5> <!-- Nama tanpa margin bawah -->
-                        <p class="text-muted mb-0"><?= $item['jabatan']; ?>, <?= $item['perusahaan']; ?></p> <!-- Jabatan dan perusahaan tanpa margin bawah -->
+                        <h5 class="mb-0"><?= $item['nama']; ?></h5> 
+                        <p class="text-muted mb-0"><?= $item['jabatan']; ?>, <?= $item['perusahaan']; ?></p> 
                     </div>
                 </div>
             </div>
         </div>
         <?php endforeach; ?>
     </div>
-</section>
+</section> -->
+
+<!-- collab pt -->
+<section class="container-fluid" style="padding: 0; margin: 0;">
+  <div class="logo-box">
+    <!-- Tulisan di atas logo -->
+    <div class="text-center trusted-text">
+      <h2>Trusted by the world’s leading organizations</h2>
+    </div>
+    <div class="logo-container">
+      <div id="logo" class="logo mt-3 pt-3"> <!-- Mengurangi margin-top dan padding-top -->
+        <img src="1.png" alt="1">
+        <img src="2.png" alt="2">
+        <img src="3.png" alt="3">
+        <img src="4.png" alt="4">
+        <img src="5.png" alt="5">
+        <img src="6.png" alt="6">
+        <img src="7.png" alt="7">
+      </div>
+    </div>
+  </div>
 
 <style>
     .btn-custom {
