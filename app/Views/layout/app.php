@@ -242,7 +242,7 @@
             <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mt-3">
               <h6 class="text-uppercase mb-4 font-weight-bold">Webpages</h6>
               <div class="webpages-grid">
-                <p><a class="text-dark" href="/index">Home</a></p>
+                <p><a class="text-dark" href="/">Home</a></p>
                 <p><a class="text-dark" href="/about">About</a></p>
                 <p><a class="text-dark" href="/product">Services</a></p>
                 <p><a class="text-dark" href="/artikel">Article</a></p>
